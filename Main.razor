@@ -1,0 +1,14 @@
+﻿@inject IDialogService DialogService
+<h1>Testing the Basics</h1>
+
+<input @bind="username" />
+<button @onclick="PromptUser">Do the Thing</button>
+
+@code {
+    private string username;
+    private void PromptUser()
+    {
+        DialogService.DisplayConfirm($"Hello {username}", "This is an example of a MAUI Dialog being used in Blazor.","Confirm","Deny");
+        @*// https://www.youtube.com/watch?v=gTLEIe0SWpI*@
+    }
+}
